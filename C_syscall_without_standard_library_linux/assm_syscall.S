@@ -8,7 +8,7 @@
 
 .intel_syntax noprefix
 .text
-    .globl _start, syscall5
+    .globl _start, syscall
 
     _start:
 	// _start function
@@ -39,7 +39,7 @@
 	//
 	ret
 
-    syscall5:
+    syscall:
         mov rax,rdi
         mov rdi,rsi
         mov rsi,rdx

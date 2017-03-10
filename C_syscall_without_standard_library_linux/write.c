@@ -5,15 +5,12 @@ puts.c:(.text.startup+0x18): undefined reference to `write'
 collect2: error: ld returned 1 exit status
 */
 
-
-#include <stdio.h>
+#include <unistd.h>
 
 int main(int argc, char* argv[])
 {
-
-    write(1, "hello\n", 6);
+    write(1, "hello world\n", 13);
 
     return 0;
 }
-
 

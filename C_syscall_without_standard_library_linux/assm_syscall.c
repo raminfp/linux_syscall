@@ -5,13 +5,13 @@
 // objdump -s -j .comment a.out
 // objdump a.out
 
-void* syscall5(
-    void* number,
-    void* arg1,
-    void* arg2,
-    void* arg3,
-    void* arg4,
-    void* arg5
+void* syscall(
+    void* syscall_number,
+    void* param1,
+    void* param2,
+    void* param3,
+    void* param4,
+    void* param5
 );
 
 typedef unsigned long int uintptr; /* size_t */
@@ -21,7 +21,7 @@ static
 intptr write(int fd, void const* data, uintptr nbytes)
 {
     return (intptr)
-        syscall5(
+        syscall(
             (void*)1, /* SYS_write */
             (void*)(intptr)fd,
             (void*)data,
